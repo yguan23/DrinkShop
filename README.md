@@ -8,7 +8,7 @@ Xamarin入門課程專題
 ↑程式架構
 
 ![未命名](https://user-images.githubusercontent.com/103955839/200930197-f39094dd-7269-445e-96ad-ebbd51087162.png)     
-↑手機模擬畫面
+↑手機模擬客製化、試算畫面
 
 
 參考範例：https://github.com/xamarin/xamarin-forms-samples/tree/main/UserInterface/Xaminals
