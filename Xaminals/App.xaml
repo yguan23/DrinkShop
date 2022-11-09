@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             x:Class="Xaminals.App"
+             windows:Application.ImageDirectory="Assets">
+    <Application.Resources>
+
+        <DataTemplate x:Key="DrinkTemplate">
+            <Grid Padding="10"
+                  RowDefinitions="Auto,Auto"
+                  ColumnDefinitions="Auto,Auto">
+                <Image Grid.RowSpan="2" 
+                       Source="{Binding ImageUrl}" 
+                       Aspect="AspectFill"
+                       HeightRequest="60" 
+                       WidthRequest="60" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontSize="Title"
+                       FontAttributes="Bold" />
+                <Label Grid.Column="1" 
+                       Grid.Row="1" 
+                       Text="{Binding Price}"
+                       FontSize="Large"
+                       TextColor="Coral"
+                       FontAttributes="Italic" 
+                       VerticalOptions="End" />
+            </Grid>
+            
+        </DataTemplate>
+
+        <DataTemplate x:Key="DrinkSearchTemplate">
+            <Grid Padding="10"
+                  ColumnDefinitions="0.15*,0.85*">
+                <Image Source="{Binding ImageUrl}"
+                       HeightRequest="40"
+                       WidthRequest="40" />
+                <Label Grid.Column="1" 
+                       Text="{Binding Name}" 
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </Grid>
+        </DataTemplate>
+    </Application.Resources>
+</Application>

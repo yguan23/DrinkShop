@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Views.DeveloperPage"
+             Title="Developer List">
+    
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#96d1ff</Color>
+        <Color x:Key="LightTextColor">#999999</Color>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*">
+            <StackLayout
+                BackgroundColor="{StaticResource Primary}"
+                HorizontalOptions="Fill"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40"  VerticalOptions="FillAndExpand">
+                        <Image
+                            HeightRequest="128"
+                            Source="Developer.png"
+                            VerticalOptions="Center" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout
+                    Padding="16,40,16,40"
+                    Orientation="Vertical"
+                    Spacing="10">
+                    <Label FontSize="22">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span
+                                        FontAttributes="Bold"
+                                        FontSize="22"
+                                        Text="開發人員名單" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="何昱融：飲品菜單(迷客夏)&#x0a;" />
+                                    <Span Text="王譽錚：飲品菜單(可不可)、PPT&#x0a;"/>
+                                    <Span Text="胡佩欣：飲品菜單(50嵐)&#x0a;"/>
+                                    <Span Text="龔意晴：飲品菜單(Comebuy)、PPT&#x0a;"/>
+                                    <Span Text="曾翊凱：地圖+飛出視窗&#x0a;"/>
+                                    <Span Text="賴冠羽：飲料客製化功能+試算車&#x0a;"/>
+                                    <Span Text="林峻宇：飲料客製化功能+試算車&#x0a;"/>
+                                    <Span Text="鐘偉嘉：飲料客製化界面&#x0a;"/>
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

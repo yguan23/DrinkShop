@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="Xaminals.Views.AboutPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Purpose">
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#96d1ff</Color>
+        <Color x:Key="LightTextColor">#999999</Color>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid RowDefinitions="Auto,*">
+            <StackLayout
+                BackgroundColor="{StaticResource Primary}"
+                HorizontalOptions="Fill"
+                VerticalOptions="FillAndExpand">
+                <StackLayout
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <ContentView Padding="0,40,0,40"  VerticalOptions="FillAndExpand">
+                        <Image
+                            HeightRequest="64"
+                            Source="Purpose.png"
+                            VerticalOptions="Center" />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+            <ScrollView Grid.Row="1">
+                <StackLayout
+                    Padding="16,40,16,40"
+                    Orientation="Vertical"
+                    Spacing="10">
+                    <Label FontSize="22">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span
+                                        FontAttributes="Bold"
+                                        FontSize="22"
+                                        Text="程式宗旨" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <FormattedString.Spans>
+                                    <Span Text="因應夏日炎炎，輔大附近飲料店眾多，每天都要思考自己要喝什麼飲料及外出購買花費太多時間，也因氣溫因素懶得走出校外選購，因此設計此程式可以快速解決問題。依照每天不同心情，搜尋紅茶、綠茶或是奶茶，也可以直接透過飲料店選購，再依據各家飲料店不同的飲品說明，快速選取符合自己需求的飲品，透過地圖得知飲料店所在位置，並在最後統計大家想喝的飲料之後提供試算金錢的功能，節省大家寶貴的時間，提高做事效率。" />
+                                </FormattedString.Spans>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

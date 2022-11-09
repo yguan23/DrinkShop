@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Views.ComebuyFruitteaPage"
+             xmlns:controls="clr-namespace:Xaminals.Controls"
+             xmlns:views="clr-namespace:Xaminals.Views"
+             xmlns:data="clr-namespace:Xaminals.Data"
+             Title="ComebuyFruittea">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#546D9F" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.SearchHandler>
+        <controls:DrinkSearchHandler Placeholder="Enter search term"
+                                      ShowsResults="true"
+                                      ItemTemplate="{StaticResource DrinkSearchTemplate}"
+                                      Drinks="{x:Static data:ComebuyFruitteaData.ComebuyFruittea}"
+                                      SelectedItemNavigationTarget="{x:Type views:ComebuyFruitteaDetailPage}" />
+    </Shell.SearchHandler>
+
+    <CollectionView Margin="20"
+                    ItemsSource="{x:Static data:ComebuyFruitteaData.ComebuyFruittea}"
+                    ItemTemplate="{StaticResource DrinkTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
+</ContentPage>

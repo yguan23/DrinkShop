@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Views.KumoPage"
+             xmlns:controls="clr-namespace:Xaminals.Controls"
+             xmlns:data="clr-namespace:Xaminals.Data"
+             Title="Kumo">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#039BE6" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <!--要改-->
+    <Shell.SearchHandler>
+        <controls:DrinkSearchHandler Placeholder="Enter search term"
+                                     ShowsResults="True"
+                                     ItemTemplate="{StaticResource DrinkSearchTemplate}"
+                                     Drinks="{x:Static data:KumoData.Kumo}"/>
+    </Shell.SearchHandler>
+
+
+    <CollectionView Margin="20"
+                    ItemsSource="{x:Static data:KumoData.Kumo}"
+                    ItemTemplate="{StaticResource DrinkTemplate}"
+                    SelectionMode="Single"
+                    SelectionChanged="OnCollectionViewSelectionChanged" />
+</ContentPage>

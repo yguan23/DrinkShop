@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Xaminals.AppShell"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:Xaminals.Controls"
+    xmlns:views="clr-namespace:Xaminals.Views"
+    x:Name="shell"
+    FlyoutBackgroundImage="TEA2.jpg"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor" Value="White" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+        </Style>
+        <Style x:Key="FlyoutItemStyle" BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem"  />
+
+        <Style
+            x:Key="Blue50Shell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#006DBB" />
+        </Style>
+
+        <Style
+            x:Key="KebukeShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#003E52" />
+        </Style>
+
+        <Style
+            x:Key="MilkShopShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#548C00" />
+        </Style>
+
+        <Style
+            x:Key="ComebuyShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#AE0000" />
+        </Style>
+
+        <Style
+            x:Key="AboutShell"
+            BasedOn="{StaticResource BaseStyle}"
+            TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#96d1ff" />
+        </Style>
+
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Route="drinks" >
+        <Tab
+            Title="Blue50"
+            Icon="blue504.png"
+            Route="blue50">
+            <ShellContent
+                Title="GoodTea"
+                ContentTemplate="{DataTemplate views:GoodTeaPage}"
+                Route="GoodTea"
+                Style="{StaticResource Blue50Shell}" />
+            <ShellContent
+                Title="Fresh"
+                ContentTemplate="{DataTemplate views:FreshPage}"
+                Route="Fresh"
+                Style="{StaticResource Blue50Shell}" />
+            <ShellContent
+                Title="Taste"
+                ContentTemplate="{DataTemplate views:TastePage}"
+                Route="Taste"
+                Style="{StaticResource Blue50Shell}" />
+            <ShellContent
+                Title="MilkTea"
+                ContentTemplate="{DataTemplate views:MilkTeaPage}"
+                Route="MilkTea"
+                Style="{StaticResource Blue50Shell}" />
+        </Tab>
+
+        <Tab
+            Title="Kebuke"
+            Icon="kebuke.png"
+            Route="kebuke">
+            <ShellContent
+                Title="kebuke"
+                ContentTemplate="{DataTemplate views:KebukePage}"
+                Route="kebuke"
+                Style="{StaticResource KebukeShell}" />
+        </Tab>
+
+        <Tab
+            Title="MilkShop"
+            Icon="milkshop.png"
+            Route="milkshop">
+            <ShellContent
+                Title="KUMO雲奶霜"
+                ContentTemplate="{DataTemplate views:KumoPage}"
+                Route="kumo"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="牧場鮮奶茶"
+                ContentTemplate="{DataTemplate views:PasturePage}"
+                Route="pasture"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="嚼對推薦"
+                ContentTemplate="{DataTemplate views:AbsolutelyRecommend}"
+                Route="absolutely"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="愛茶的牛"
+                ContentTemplate="{DataTemplate views:TeaCow}"
+                Route="tea"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="手作特調"
+                ContentTemplate="{DataTemplate views:HandMake}"
+                Route="handmake"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="綠光牧場鮮奶"
+                ContentTemplate="{DataTemplate views:GreenLight}"
+                Route="greenlight"
+                Style="{StaticResource MilkShopShell}" />
+            <ShellContent
+                Title="綠光鮮奶one size"
+                ContentTemplate="{DataTemplate views:GreenFamily}"
+                Route="greenfamily"
+                Style="{StaticResource MilkShopShell}" />
+        </Tab>
+
+        <Tab Title="Comebuy"
+             Route="Comebuy"
+             Icon="comebuy02.png">
+            <ShellContent 
+                      Route="ComebuyFruit"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="果然系列"
+                      ContentTemplate="{DataTemplate views:ComebuyFruitPage}"/>
+            <ShellContent 
+                      Route="ComebuyFruittea"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="鮮調果茶"
+                      ContentTemplate="{DataTemplate views:ComebuyFruitteaPage}"/>
+            <ShellContent 
+                      Route="ComebuyMilktea"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="鮮萃茶拿鐵"
+                      ContentTemplate="{DataTemplate views:ComebuyMilkteaPage}"/>
+            <ShellContent 
+                      Route="ComebuyNaturemilktea"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="奶茶/特調"
+                      ContentTemplate="{DataTemplate views:ComebuyNaturemilkteaPage}"/>
+            <ShellContent 
+                      Route="ComebuySummerspecial"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="夏季限定"
+                      ContentTemplate="{DataTemplate views:ComebuySummerspecialPage}"/>
+            <ShellContent 
+                      Route="ComebuyWinterspecial"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="冬季限定"
+                      ContentTemplate="{DataTemplate views:ComebuyWinterspecialPage}"/>
+            <ShellContent 
+                      Route="ComebuyTea"
+                      Style="{StaticResource ComebuyShell}"
+                      Title="原葉鮮萃茶"
+                      ContentTemplate="{DataTemplate views:ComebuyTeaPage}"/>
+        </Tab>
+
+    </FlyoutItem>
+
+    <MenuItem
+        Command="{Binding MapCommand}"
+        CommandParameter="https://reurl.cc/d2ke12"
+        IconImageSource="blue504.png"
+        Text="Blue50_Map" />
+    <MenuItem
+        Command="{Binding MapCommand}"
+        CommandParameter="https://reurl.cc/QLAWWM"
+        IconImageSource="kebuke.png"
+        Text="Kebuke_Map" />
+    <MenuItem
+        Command="{Binding MapCommand}"
+        CommandParameter="https://reurl.cc/g2yQG7"
+        IconImageSource="milkshop.png"
+        Text="MilkShop_Map" />
+    <MenuItem
+        Command="{Binding MapCommand}"
+        CommandParameter="https://reurl.cc/d2key2"
+        IconImageSource="comebuy02.png"
+        Text="Combuy_Map" />
+
+    <ShellContent
+        Title="Purpose"
+        ContentTemplate="{DataTemplate views:AboutPage}"
+        Icon="help.png"
+        Route="about"
+        Style="{StaticResource AboutShell}" />
+
+    <ShellContent
+        Title="Developer List"
+        ContentTemplate="{DataTemplate views:DeveloperPage}"
+        Icon="info.png"
+        Style="{StaticResource AboutShell}" />
+</Shell>
+    

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xaminals.Controls.ShoppingCartPage"
+             Title="Shopping Cart">
+    <!--試算車-->
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="您的試算訂單："
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+            
+            <Label Text="{Binding Name}" 
+                   x:Name="ShowName"
+                   HorizontalOptions="Start"
+                   FontSize="17"/>
+
+            <Label Text="{Binding Info}" 
+                x:Name="ShowInfo"
+                HorizontalOptions="Start" />
+
+            <Label Text="{Binding Num, StringFormat='數量：{0\}'}" 
+                x:Name="ShowNum" 
+                HorizontalOptions="Start"/>
+
+            <Label Text="{Binding MoreInfo, StringFormat='備註：{0\}'}" 
+                x:Name="ShowMoreInfo"
+                HorizontalOptions="Start" />
+
+            <Label Text="{Binding Price, StringFormat='金額：{0\}'}" 
+                x:Name="ShowPrice"
+                HorizontalOptions="Start" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

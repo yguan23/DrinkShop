@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Xaminals.Views.PastureDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Pasture Details">
+    <Shell.TitleView>
+        <ImageButton x:Name="ShoppingCart"
+                Source="shoppingcart1.png"
+                HorizontalOptions="End"
+                VerticalOptions="End" 
+                Clicked="ShoppingCart_Clicked"/>
+    </Shell.TitleView>
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Label
+                HorizontalOptions="Center"
+                Style="{DynamicResource TitleStyle}"
+                Text="{Binding Name}" />
+            <Label x:Name="lblSizem" Text="{Binding SizeM}" IsVisible="false"/>
+            <Label x:Name="lblSizel" Text="{Binding SizeL}" IsVisible="false"/>
+            <Label Text="{Binding Price}" 
+                   Style="{DynamicResource BodyStyle}" />
+            <Image
+                HeightRequest="200"
+                HorizontalOptions="CenterAndExpand"
+                Source="{Binding ImageUrl}"
+                WidthRequest="200" />
+            <Label Style="{DynamicResource BodyStyle}" Text="{Binding Introduction}" />
+            
+            <Label Text="大小"
+                   FontSize="15"
+                   Margin="0,0,0,-10" />
+            <Label FontSize="5"/>
+            <StackLayout Orientation="Horizontal">
+                <Button HorizontalOptions="Start" Text="M" Clicked="sizeM" x:Name="sizem" BackgroundColor="#dddddd"/>
+                <Button HorizontalOptions="Start" Text="L" Clicked="sizeL" x:Name="sizel" BackgroundColor="#dddddd"/>
+            </StackLayout>
+
+            <Label Text="冰量"
+                   FontSize="15"
+                   Margin="0,0,0,-10" />
+            <Label FontSize="5"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="正常" HorizontalOptions="FillAndExpand" x:Name="ice1" Clicked="ice1_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="少冰" HorizontalOptions="FillAndExpand" x:Name="ice2" Clicked="ice2_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="微冰" HorizontalOptions="FillAndExpand" x:Name="ice3" Clicked="ice3_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="去冰" HorizontalOptions="FillAndExpand" x:Name="ice4" Clicked="ice4_Clicked" BackgroundColor="#dddddd"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="溫" HorizontalOptions="Start" x:Name="ice5" Clicked="ice5_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="熱" HorizontalOptions="Start" x:Name="ice6" Clicked="ice6_Clicked" BackgroundColor="#dddddd"/>
+            </StackLayout>
+
+            <Label Text="糖量"
+                   FontSize="15"
+                   Margin="0,0,0,-10" />
+            <Label FontSize="5"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="正常糖" HorizontalOptions="FillAndExpand" x:Name="sugar1" Clicked="sugar1_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="少糖" HorizontalOptions="FillAndExpand" x:Name="sugar2" Clicked="sugar2_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="半糖" HorizontalOptions="FillAndExpand" x:Name="sugar3" Clicked="sugar3_Clicked" BackgroundColor="#dddddd"/>
+                <Button Text="微糖" HorizontalOptions="FillAndExpand" x:Name="sugar4" Clicked="sugar4_Clicked" BackgroundColor="#dddddd"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="無糖" HorizontalOptions="Start" x:Name="sugar5" Clicked="sugar5_Clicked" BackgroundColor="#dddddd"/>
+            </StackLayout>
+
+            <Label Text="+10元加料"
+                   FontSize="15"
+                   Margin="0,0,0,-10" />
+            <Label FontSize="5"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="珍珠" HorizontalOptions="FillAndExpand" x:Name="extra1" BackgroundColor="#dddddd" Clicked="extra1_Clicked"/>
+                <Button Text="布丁" HorizontalOptions="FillAndExpand" x:Name="extra2" BackgroundColor="#dddddd" Clicked="extra1_Clicked"/>
+                <Button Text="仙草凍" HorizontalOptions="FillAndExpand" x:Name="extra3" BackgroundColor="#dddddd" Clicked="extra1_Clicked"/>
+                <Button Text="伯爵紅茶凍" HorizontalOptions="FillAndExpand" x:Name="extra4" BackgroundColor="#dddddd" Clicked="extra1_Clicked"/>
+            </StackLayout>
+            <Label Text="+15元加料"
+                   FontSize="15"
+                   Margin="0,0,0,-10" />
+            <Label FontSize="5"/>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="芋圓" HorizontalOptions="FillAndExpand" x:Name="extra5" BackgroundColor="#dddddd" Clicked="extra5_Clicked"/>
+                <Button Text="黃金Q角" HorizontalOptions="FillAndExpand" x:Name="extra6" BackgroundColor="#dddddd" Clicked="extra5_Clicked"/>
+            </StackLayout>
+            <Label FontSize="5"/>
+            <Label Text="總金額" x:Name="lblshow" FontSize="Large"/>
+            <FlexLayout Direction="Row" 
+                        Wrap="Wrap" 
+                        JustifyContent="SpaceBetween" 
+                        AlignItems="Start">
+                <Entry Placeholder="數量" 
+                       BackgroundColor="#ddd"
+                       FlexLayout.Basis="30%" 
+                       x:Name="quantity"
+                       Text="0"/>
+                <Entry Placeholder="備註"
+                       BackgroundColor="#ddd"
+                       FlexLayout.Basis="60%"
+                       x:Name="moreinfo"/>
+            </FlexLayout>
+
+            <Button Text="加入購物車" Clicked="buy"/>
+            <Label x:Name="totalinfo" IsVisible="false"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

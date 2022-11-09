@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="Xaminals.Views.GreenFamilyDetailPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="綠光鮮奶">
+    <Shell.TitleView>
+        <ImageButton x:Name="ShoppingCart"
+                Source="shoppingcart1.png"
+                HorizontalOptions="End"
+                VerticalOptions="End" 
+                Clicked="ShoppingCart_Clicked"/>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <StackLayout Margin="20">
+            <Label Text="{Binding Name}" 
+                   HorizontalOptions="Center" 
+                   Style="{DynamicResource TitleStyle}" />
+            <Label Text="{Binding Price}" 
+                   Style="{DynamicResource BodyStyle}" />
+            <Image Source="{Binding ImageUrl}" 
+                   HeightRequest="200" 
+                   WidthRequest="200" 
+                   HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Introduction}" 
+                   Style="{DynamicResource BodyStyle}" />
+
+            <Label Text="{Binding Price}" x:Name="lblshow" FontSize="Large"/>
+
+            <FlexLayout Direction="Row" 
+                        Wrap="Wrap" 
+                        JustifyContent="SpaceBetween" 
+                        AlignItems="Start">
+                <Entry Placeholder="數量" 
+                       BackgroundColor="#ddd"
+                       FlexLayout.Basis="30%" 
+                       x:Name="quantity"
+                       Text="0"/>
+                <Entry Placeholder="備註"
+                       BackgroundColor="#ddd"
+                       FlexLayout.Basis="60%"
+                       x:Name="moreinfo"/>
+            </FlexLayout>
+
+            <Button Text="加入購物車" Clicked="buy"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
