@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "FcxlqDOKTW7DC/cdp+/3aBcSqCiCrZ6Hm4+8zJroV2sKx4dlFbiCXey8jfdhpLQ1DG7Yry0VRzI7E8RUHsnqUw==",
+  "success": true,
+  "projectFilePath": "E:\\DrinkStore\\Xaminals.iOS\\Xaminals.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\guany\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
+    "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\5.0.0.2012\\xamarin.forms.5.0.0.2012.nupkg.sha512",
+    "C:\\Users\\guany\\.nuget\\packages\\xamarin.forms.maps\\5.0.0.2012\\xamarin.forms.maps.5.0.0.2012.nupkg.sha512"
+  ],
+  "logs": []
+}
